@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spam Detection System</title>
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<div class="card">
+<h1>Spam Detection System</h1>
+<p class="description">
+Enter a message below and our Machine Learning model
+will predict whether it is Spam or Not Spam.
+</p>
+<form method="POST">
+<textarea
+name="message"
+placeholder="Enter your message here..."
+required>{{ message }}</textarea>
+<button type="submit">
+Check Message
+</button>
+</form>
+{% if prediction %}
+<div class="result">
+<p>Prediction:</p>
+<h2>{{ prediction }}</h2>
+</div>
+{% endif %}
+<div class="accuracy">
+Model Accuracy: {{ accuracy }}%
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -52,7 +52,7 @@ accuracy = accuracy_score(y_test, y_pred) * 100
 
 @app.route("/", methods=["GET", "POST"])
 def home():
-    prediction =
+    prediction = ""
     message = ""
 
     if request.method == "POST":
